@@ -37,7 +37,8 @@ while (!shouldExit)
         Console.WriteLine("Console was resized. Program exiting.");
         return;
     }
-    Move();
+    Move(true, PlayerActualSpeed());
+    
 }
 
 // Returns true if the Terminal was resized 
@@ -75,12 +76,21 @@ bool NoFoodRemaining()
             {
                 noFood = true;
                 ChangePlayer();
-                FreezePlayer();
+                
                 return noFood;
             }
         }
     }
     return noFood;
+}
+int PlayerActualSpeed()
+{
+    if (player == states[2])
+        FreezePlayer();
+    if (player == states[1])
+    return 3;
+
+    return 1;
 }
 
 // Changes the player to match the food consumed
@@ -99,7 +109,7 @@ void FreezePlayer()
 }
 
 // Reads directional input from the Console and moves the player
-void Move(bool detectionKey = false)
+void Move(bool detectionKey = false, int speed = 1)
 {
     int lastX = playerX;
     int lastY = playerY;
@@ -107,16 +117,16 @@ void Move(bool detectionKey = false)
     switch (Console.ReadKey(true).Key)
     {
         case ConsoleKey.UpArrow:
-            playerY--;
+            playerY --;
             break;
         case ConsoleKey.DownArrow:
             playerY++;
             break;
         case ConsoleKey.LeftArrow:
-            playerX--;
+            playerX -= speed;
             break;
         case ConsoleKey.RightArrow:
-            playerX++;
+            playerX += speed;
             break;
         case ConsoleKey.Escape:
             shouldExit = true;
@@ -151,6 +161,7 @@ void Move(bool detectionKey = false)
     Console.Write(player);
 
 }
+
 void clearCharacter(string asset, int x, int y)
 {
     Console.SetCursorPosition(x, y);
