@@ -1,0 +1,15 @@
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\bin\Debug\net6.0\Starter.exe
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\bin\Debug\net6.0\Starter.deps.json
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\bin\Debug\net6.0\Starter.runtimeconfig.json
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\bin\Debug\net6.0\Starter.dll
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\bin\Debug\net6.0\Starter.pdb
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.csproj.AssemblyReference.cache
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.GeneratedMSBuildEditorConfig.editorconfig
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.AssemblyInfoInputs.cache
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.AssemblyInfo.cs
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.csproj.CoreCompileInputs.cache
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.dll
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\refint\Starter.dll
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.pdb
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\Starter.genruntimeconfig.cache
+D:\programacion\csharpya\VSCode\GameProject\Challenge-project-Create-methods-in-CSharp-main\Starter\obj\Debug\net6.0\ref\Starter.dll
