@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 Random random = new Random();
 Console.CursorVisible = false;
@@ -19,7 +20,8 @@ string[] states = { "('-')", "(^-^)", "(X_X)" };
 string[] foods = { "@@@@@", "$$$$$", "#####" };
 
 // Current player string displayed in the Console
-string player = states[0];
+int playerState = 0;
+string player = states[playerState];
 
 // Index of the current food
 int food = 0;
@@ -57,27 +59,29 @@ void ShowFood()
     // Display the food at the location
     Console.SetCursorPosition(foodX, foodY);
     Console.Write(foods[food]);
+
 }
 
 // check that the player has eaten the food
-bool AnyFoodRemaining()
+bool NoFoodRemaining()
 {
+    bool noFood = false;
 
-    for (int i = 0; i < foods[food].Length; i++)
+    for (int i = 0; i < states[playerState].Length; i++)
     {
-        Console.SetCursorPosition(foodX + i, foodY);
-        if (foodX == 1)
+        for (int j = 0; j < foods[food].Length; j++)
         {
-//podria hacer un string vacio con las posiciones que se fue cominedo
+            if (foodX + j == playerX + i && foodY == playerY)
+            {
+                noFood = true;
+                ChangePlayer();
+                FreezePlayer();
+                return noFood;
+            }
         }
     }
-
-
-    bool remainingFood = true;
-    return remainingFood;
-
+    return noFood;
 }
-
 
 // Changes the player to match the food consumed
 void ChangePlayer()
@@ -129,19 +133,31 @@ void Move(bool detectionKey = false)
     }
 
     // Clear the characters at the previous position
-    Console.SetCursorPosition(lastX, lastY);
-    for (int i = 0; i < player.Length; i++)
-    {
-        Console.Write(" ");
-    }
+    clearCharacter(player, lastX, lastY);
 
     // Keep player position within the bounds of the Terminal window
     playerX = (playerX < 0) ? 0 : (playerX >= width ? width : playerX);
     playerY = (playerY < 0) ? 0 : (playerY >= height ? height : playerY);
 
+
+    if (NoFoodRemaining())
+    {
+        clearCharacter(foods[food], foodX, foodY);
+        ShowFood();
+    }
+
     // Draw the player at the new location
     Console.SetCursorPosition(playerX, playerY);
     Console.Write(player);
+
+}
+void clearCharacter(string asset, int x, int y)
+{
+    Console.SetCursorPosition(x, y);
+    for (int i = 0; i < asset.Length; i++)
+    {
+        Console.Write(" ");
+    }
 }
 
 // Clears the console, displays the food and player
